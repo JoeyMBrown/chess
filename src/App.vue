@@ -68,7 +68,7 @@ table {
     margin: 0;
     padding: 0;
     max-width: 100%;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 /*End CSS Reset*/
 
@@ -86,9 +86,6 @@ h1 {
 }
 h2 {
     font-size: 3.5rem;
-}
-section {
-    padding: 4% 0;
 }
 a {
     text-decoration: none;

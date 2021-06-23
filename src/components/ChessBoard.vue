@@ -1,14 +1,16 @@
 <template>
     <div>
-        <div class="numbers">
-            <ul>
-                <li :key=number v-for="number in numbers">{{ number }}</li>
-            </ul>
-        </div>
-        <div class="chessContainer">
-            <ul class="chessBoard">
-                <li :id=letterNumber :key=letterNumber v-for="letterNumber in chessBoardIds">{{ letterNumber }}</li>
-            </ul>
+        <div class="chessBoardUi">
+            <div class="numbers">
+                <ul>
+                    <li :key=number v-for="number in numbers">{{ number }}</li>
+                </ul>
+            </div>
+            <div class="chessContainer">
+                <ul class="chessBoard">
+                    <li :id=letterNumber :key=letterNumber v-for="letterNumber in chessBoardIds">{{ letterNumber }}</li>
+                </ul>
+            </div>
         </div>
         <div class="letters">
             <ul>
@@ -67,6 +69,32 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.chessBoardUi {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 0 20%;
+    margin-top: 2%;
+}
+.numbers {
+    margin-right: 1%;
+}
+.numbers li {
+    display: flex;
+    align-items: center;
+    height: 11.5vh;
+}
+.chessBoard {
+    display: flex;
+    flex-flow: row wrap-reverse;
+    justify-content: center;
+    border: 5px solid black;
+}
+.chessBoard li {
+    display:flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
 .black {
     background-color: black;
 }
@@ -74,13 +102,22 @@ export default {
     background-color: white;
 }
 .square {
-    width: 12%;
-    height: 10vh;
+    width: 12.5%;
+    height: 11.5vh;
 }
-
-.chessBoard {
+.letters {
+    padding: 0 21% 0 21.4%;
+}
+.letters ul{
     display: flex;
-    flex-flow: row wrap-reverse;
+    width: 100%;
+    margin: 0 auto;
+    align-items:center;
+}
+.letters li{
+    display:flex;
+    align-items: center;
     justify-content: center;
+    width: 12.5%;
 }
 </style>
